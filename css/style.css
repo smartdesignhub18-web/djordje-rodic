@@ -1,0 +1,6777 @@
+/* =========================================================
+   Personalni Trener - PERSONALNI TRENER
+   GLAVNI CSS
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background: #071015;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   BOJE
+========================================================= */
+
+:root {
+    --dark: #071015;
+    --dark-2: #0a171d;
+    --dark-3: #0d2027;
+
+    --turquoise: #23e6d1;
+    --turquoise-dark: #12b9aa;
+
+    --white: #ffffff;
+    --gray: #aebbc0;
+
+    --container: 1240px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 12, 16, 0.95),
+        rgba(4, 12, 16, 0.45),
+        transparent
+    );
+}
+
+.header-container {
+    width: min(92%, var(--container));
+    height: 88px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo-mark {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -4px;
+    color: var(--turquoise);
+}
+
+.logo-text {
+    font-size: 9px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.logo-text small {
+    display: block;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #b6c2c6;
+}
+
+
+/* =========================================================
+   NAVIGACIJA
+========================================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.main-nav a {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.82);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--turquoise);
+
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover {
+    color: #ffffff;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER CTA
+========================================================= */
+
+.header-cta {
+    flex-shrink: 0;
+
+    padding: 13px 22px;
+
+    border-radius: 100px;
+
+    background: var(--turquoise);
+    color: #041114;
+
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    box-shadow:
+        0 0 0 1px rgba(35, 230, 209, 0.3),
+        0 0 25px rgba(35, 230, 209, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 1px rgba(35, 230, 209, 0.5),
+        0 8px 35px rgba(35, 230, 209, 0.35);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: #ffffff;
+
+    transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 760px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 78% 40%,
+            rgba(35, 230, 209, 0.08),
+            transparent 30%
+        ),
+        #071015;
+}
+
+
+/* pozadina */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 14, 18, 1) 0%,
+            rgba(5, 14, 18, 0.94) 30%,
+            rgba(5, 14, 18, 0.45) 65%,
+            rgba(5, 14, 18, 0.7) 100%
+        ),
+        url("../images/hero-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.9;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(4, 12, 16, 0.1) 50%,
+            #071015 100%
+        );
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.hero-container {
+    position: relative;
+    z-index: 5;
+
+    width: min(92%, var(--container));
+    min-height: 670px;
+
+    margin: auto;
+    padding-top: 155px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+
+    max-width: 680px;
+}
+
+
+/* mali tekst iznad naslova */
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 17px;
+
+    color: var(--turquoise);
+
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.hero-eyebrow span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--turquoise);
+
+    box-shadow: 0 0 12px var(--turquoise);
+}
+
+
+/* =========================================================
+   HERO NASLOV
+========================================================= */
+
+.hero h1 {
+    max-width: 680px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(64px, 6vw, 92px);
+    line-height: 0.88;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+}
+
+.hero h1 strong {
+    display: block;
+
+    color: var(--turquoise);
+
+    font-weight: 900;
+
+    text-shadow:
+        0 0 30px rgba(35, 230, 209, 0.1);
+}
+
+
+/* =========================================================
+   HERO OPIS
+========================================================= */
+
+.hero-description {
+    max-width: 570px;
+
+    margin-top: 25px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #d5dfe2;
+}
+
+
+/* =========================================================
+   DUGMAD
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 31px;
+}
+
+.btn {
+    min-height: 54px;
+
+    padding: 0 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border-radius: 100px;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.35px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--turquoise);
+    color: #041114;
+
+    box-shadow: 0 8px 30px rgba(35, 230, 209, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 13px 40px rgba(35, 230, 209, 0.35);
+}
+
+.btn-primary span {
+    font-size: 20px;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--turquoise);
+
+    background: rgba(35, 230, 209, 0.08);
+}
+
+.play-icon {
+    width: 25px;
+    height: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #071015;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   SOCIAL PROOF
+========================================================= */
+
+.hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 38px;
+}
+
+.proof-avatars {
+    display: flex;
+}
+
+.proof-avatar {
+    width: 38px;
+    height: 38px;
+
+    margin-left: -8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #071015;
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dce7e9,
+            #78888e
+        );
+
+    color: #071015;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.proof-avatar:first-child {
+    margin-left: 0;
+}
+
+.proof-content p {
+    font-size: 11px;
+    color: #d2dcdf;
+}
+
+.proof-content p strong {
+    color: var(--turquoise);
+}
+
+.proof-rating {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 4px;
+}
+
+.proof-rating span {
+    color: #ffc933;
+    letter-spacing: 1px;
+    font-size: 11px;
+}
+
+.proof-rating small {
+    color: #9caeb4;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   HERO TRENER - DESNA STRANA
+========================================================= */
+
+.hero-person {
+    position: relative;
+
+    height: 520px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+/*
+   OVAJ PLACEHOLDER ĆEMO POSLE
+   ZAMENITI PRAVOM PNG FOTOGRAFIJOM
+*/
+
+
+
+.hero-trainer-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: auto;
+    height: 100%;
+    max-width: none;
+
+    object-fit: contain;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+
+
+/* =========================================================
+   POTPIS
+========================================================= */
+
+.hero-signature {
+    position: absolute;
+
+    right: -55px;
+    top: 115px;
+
+    width: 155px;
+
+    z-index: 10;
+
+    transform: rotate(-5deg);
+
+    font-family: cursive;
+
+    font-size: 31px;
+    line-height: 1.05;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.65);
+}
+
+.hero-signature span {
+    display: block;
+}
+
+.hero-signature i {
+    display: block;
+
+    width: 75px;
+    height: 3px;
+
+    margin-top: 15px;
+    margin-left: 25px;
+
+    transform: rotate(-10deg);
+
+    border-radius: 10px;
+
+    background: var(--turquoise);
+
+    box-shadow: 0 0 12px rgba(35, 230, 209, 0.6);
+}
+
+
+/* =========================================================
+   STATISTIKA
+========================================================= */
+
+.stats {
+    position: relative;
+    z-index: 10;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(6, 19, 24, 0.94);
+
+    backdrop-filter: blur(12px);
+}
+
+.stats-container {
+    width: min(92%, var(--container));
+    min-height: 110px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.stat-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 25%;
+
+    width: 1px;
+    height: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-icon {
+    color: var(--turquoise);
+
+    font-size: 25px;
+}
+
+.stat-item strong {
+    display: block;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 38px;
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+.stat-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #aab9be;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PRIVREMENO - PRAZNE SEKCIJE
+========================================================= */
+
+#o-meni,
+#transformacije,
+#usluge,
+#kako-funkcionise,
+#iskustva,
+#faq,
+#kontakt {
+    min-height: 1px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .main-nav {
+        gap: 16px;
+    }
+
+    .main-nav a {
+        font-size: 11px;
+    }
+
+    .header-cta {
+        padding: 12px 16px;
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero-signature {
+        right: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV / TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        position: absolute;
+    }
+
+    .header-container {
+        height: 75px;
+    }
+
+    .main-nav,
+    .header-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        min-height: auto;
+
+        padding-top: 125px;
+        padding-bottom: 55px;
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 720px;
+        margin: auto;
+    }
+
+    .hero-eyebrow {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        margin: auto;
+
+        font-size: clamp(56px, 11vw, 80px);
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-proof {
+        justify-content: center;
+    }
+
+    .hero-person {
+        height: 410px;
+        margin-top: 30px;
+    }
+
+    .hero-person-placeholder {
+        width: 280px;
+        height: 390px;
+    }
+
+    .hero-signature {
+        right: 8%;
+        top: 80px;
+    }
+
+
+    /* STATISTIKA */
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+        min-height: 100px;
+    }
+
+    .stat-item:nth-child(2)::after {
+        display: none;
+    }
+
+    .stat-item:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .header-container {
+        width: 90%;
+    }
+
+    .logo-mark {
+        font-size: 34px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        width: 90%;
+
+        padding-top: 115px;
+        padding-bottom: 35px;
+    }
+
+    .hero-eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 15vw, 67px);
+        line-height: 0.9;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        margin-top: 20px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 340px;
+
+        min-height: 52px;
+    }
+
+    .hero-proof {
+        margin-top: 30px;
+
+        flex-direction: column;
+    }
+
+    .proof-rating {
+        justify-content: center;
+    }
+
+
+    /* TRENER */
+
+    .hero-person {
+        height: 350px;
+
+        margin-top: 25px;
+    }
+
+    .hero-person-placeholder {
+        width: 230px;
+        height: 330px;
+    }
+
+    .hero-signature {
+        right: 0;
+        top: 55px;
+
+        width: 100px;
+
+        font-size: 22px;
+    }
+
+
+    /* STATISTIKA */
+
+    .stats-container {
+        width: 94%;
+    }
+
+    .stat-item {
+        min-height: 90px;
+
+        gap: 10px;
+    }
+
+    .stat-icon {
+        font-size: 18px;
+    }
+
+    .stat-item strong {
+        font-size: 29px;
+    }
+
+    .stat-item span {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   MALI TELEFONI
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero-person {
+        height: 310px;
+    }
+
+    .hero-person-placeholder {
+        width: 205px;
+        height: 295px;
+    }
+
+}
+
+/* =========================================================
+   O MENI
+========================================================= */
+
+.about {
+    position: relative;
+    overflow: hidden;
+
+    background: #f4f7f7;
+    color: #071015;
+}
+
+.about::after {
+    content: "";
+
+    position: absolute;
+    right: -180px;
+    top: -180px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(35, 230, 209, 0.08);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ABOUT CONTAINER
+========================================================= */
+
+.about-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 1440px);
+    min-height: 650px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEVA STRANA
+========================================================= */
+
+.about-visual {
+    position: relative;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #0b171c;
+}
+
+
+/* =========================================================
+   FOTOGRAFIJA TRENERA
+========================================================= */
+
+.about-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       Ovde podešavamo kadar.
+       42% drži lice i gornji deo tela lepo u kadru.
+    */
+    object-position: center 42%;
+}
+
+
+/* =========================================================
+   GRADIENT PREKO FOTOGRAFIJE
+========================================================= */
+
+.about-visual::after {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(7, 16, 21, 0.00) 0%,
+            rgba(7, 16, 21, 0.00) 42%,
+            rgba(7, 16, 21, 0.08) 58%,
+            rgba(7, 16, 21, 0.28) 76%,
+            rgba(7, 16, 21, 0.78) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CITAT PREKO FOTOGRAFIJE
+========================================================= */
+
+.about-quote {
+    position: absolute;
+    z-index: 5;
+
+    left: 45px;
+    bottom: 45px;
+
+    width: 290px;
+
+    padding: 25px 27px;
+
+    border-left: 3px solid var(--turquoise);
+
+    background: rgba(5, 16, 21, 0.82);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.about-quote p {
+    color: #ffffff;
+
+    font-size: 15px;
+    line-height: 1.55;
+
+    font-weight: 600;
+}
+
+.about-quote span {
+    display: block;
+
+    margin-top: 15px;
+
+    font-family: cursive;
+
+    font-size: 22px;
+
+    color: var(--turquoise);
+}
+
+
+/* =========================================================
+   DESNA STRANA
+========================================================= */
+
+.about-content {
+    position: relative;
+
+    padding: 85px 8vw 75px 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   MALI NASLOV
+========================================================= */
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+    color: var(--turquoise-dark);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.section-label span {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--turquoise-dark);
+}
+
+
+/* =========================================================
+   ABOUT NASLOV
+========================================================= */
+
+.about h2 {
+    max-width: 650px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(46px, 4.4vw, 66px);
+    line-height: 0.96;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    color: #081419;
+}
+
+.about h2 strong {
+    display: block;
+
+    color: var(--turquoise-dark);
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   ABOUT TEKST
+========================================================= */
+
+.about-intro {
+    max-width: 650px;
+
+    margin-top: 26px;
+
+    color: #26383e;
+
+    font-size: 15px;
+    line-height: 1.75;
+
+    font-weight: 600;
+}
+
+.about-text {
+    max-width: 650px;
+
+    margin-top: 13px;
+
+    color: #65767b;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   ABOUT FEATURES
+========================================================= */
+
+.about-features {
+    max-width: 670px;
+
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.about-feature {
+    min-height: 78px;
+
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    border: 1px solid #e1e8e9;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-feature:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(18, 185, 170, 0.4);
+
+    box-shadow:
+        0 10px 30px rgba(8, 20, 25, 0.08);
+}
+
+.feature-icon {
+    flex-shrink: 0;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(35, 230, 209, 0.13);
+
+    color: #0cae9f;
+
+    font-weight: 900;
+}
+
+.about-feature strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #102128;
+
+    font-size: 12px;
+}
+
+.about-feature span {
+    color: #718087;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ABOUT BUTTON
+========================================================= */
+
+.about-button {
+    width: fit-content;
+
+    margin-top: 30px;
+
+    padding: 15px 24px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 100px;
+
+    background: #081419;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-button span {
+    color: var(--turquoise);
+
+    font-size: 18px;
+}
+
+.about-button:hover {
+    transform: translateY(-3px);
+
+    background: #0c252c;
+
+    box-shadow:
+        0 12px 30px rgba(8, 20, 25, 0.18);
+}
+
+
+/* =========================================================
+   ABOUT - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-visual {
+        min-height: 600px;
+    }
+
+    .about-image img {
+        /*
+           Na užem ekranu pokazujemo malo više
+           gornjeg dela fotografije.
+        */
+        object-position: center 38%;
+    }
+
+    .about-content {
+        padding: 65px 7%;
+    }
+
+}
+
+
+/* =========================================================
+   ABOUT - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-visual {
+        min-height: 520px;
+    }
+
+    .about-image img {
+        object-position: center 34%;
+    }
+
+    .about-quote {
+        left: 20px;
+        bottom: 20px;
+
+        width: calc(100% - 40px);
+
+        padding: 20px;
+    }
+
+    .about-quote p {
+        font-size: 13px;
+    }
+
+    .about-quote span {
+        margin-top: 12px;
+
+        font-size: 19px;
+    }
+
+    .about-content {
+        padding: 55px 5%;
+    }
+
+    .about h2 {
+        font-size: 45px;
+    }
+
+    .about-intro {
+        font-size: 14px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   ABOUT - MALI TELEFONI
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-visual {
+        min-height: 470px;
+    }
+
+    .about-image img {
+        object-position: center 32%;
+    }
+
+    .about-quote {
+        left: 15px;
+        bottom: 15px;
+
+        width: calc(100% - 30px);
+    }
+
+}
+
+/* =========================================================
+   TRANSFORMACIJE
+========================================================= */
+
+.transformations {
+    position: relative;
+
+    padding: 95px 0 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(35, 230, 209, 0.09),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #071015 0%,
+            #0a1a20 50%,
+            #061015 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* dekoracija u pozadini */
+
+.transformations::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    bottom: -250px;
+
+    border: 1px solid rgba(35, 230, 209, 0.08);
+
+    transform: rotate(45deg);
+}
+
+.transformations-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   NASLOV
+========================================================= */
+
+.transformations-heading {
+    margin-bottom: 45px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.section-label-dark {
+    color: var(--turquoise);
+}
+
+.section-label-dark span {
+    background: var(--turquoise);
+}
+
+.transformations h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(48px, 5vw, 70px);
+    line-height: 0.92;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+.transformations h2 strong {
+    display: block;
+
+    color: var(--turquoise);
+
+    font-weight: 900;
+}
+
+.transformations-heading p {
+    max-width: 550px;
+
+    margin-top: 18px;
+
+    color: #9eafb5;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STRELICE
+========================================================= */
+
+.transform-controls {
+    display: flex;
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.transform-arrow {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.transform-arrow:hover {
+    transform: scale(1.06);
+
+    border-color: var(--turquoise);
+
+    background: var(--turquoise);
+
+    color: #071015;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.transform-slider {
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    padding-bottom: 12px;
+
+    scrollbar-width: none;
+}
+
+.transform-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   KARTICA
+========================================================= */
+
+.transform-card {
+    flex: 0 0 calc(25% - 15px);
+
+    min-width: 0;
+
+    scroll-snap-align: start;
+}
+
+
+/* =========================================================
+   BEFORE / AFTER
+========================================================= */
+
+.transform-images {
+    position: relative;
+
+    height: 350px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+
+    background: #0b171c;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.transform-card:hover .transform-images {
+    transform: translateY(-5px);
+
+    border-color: rgba(35, 230, 209, 0.4);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(35, 230, 209, 0.05);
+}
+
+.transform-photo {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.transform-photo.before {
+    background:
+        linear-gradient(
+            rgba(4, 13, 17, 0.25),
+            rgba(4, 13, 17, 0.25)
+        ),
+        linear-gradient(
+            135deg,
+            #25383f,
+            #101c21
+        );
+}
+
+.transform-photo.after {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35, 230, 209, 0.15),
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            #172c32,
+            #09161b
+        );
+}
+
+.transform-photo span {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 28px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.transform-photo small {
+    margin-top: 5px;
+
+    color: #71868d;
+
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* PRE / POSLE oznake */
+
+.transform-photo::after {
+    position: absolute;
+
+    top: 13px;
+
+    padding: 6px 9px;
+
+    border-radius: 100px;
+
+    background: rgba(5, 15, 19, 0.7);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.transform-photo.before::after {
+    content: "PRE";
+
+    left: 12px;
+}
+
+.transform-photo.after::after {
+    content: "POSLE";
+
+    right: 12px;
+
+    color: var(--turquoise);
+}
+
+
+/* =========================================================
+   SREDNJA LINIJA
+========================================================= */
+
+.transform-divider {
+    position: absolute;
+    z-index: 5;
+
+    left: 50%;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.transform-divider span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 38px;
+    height: 38px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #071015;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #071015;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   REZULTAT
+========================================================= */
+
+.transform-result {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.result-number {
+    padding-right: 15px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    color: var(--turquoise);
+
+    font-size: 28px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.result-number span {
+    font-size: 17px;
+}
+
+.result-time {
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   CITAT
+========================================================= */
+
+.transform-quote {
+    min-height: 50px;
+
+    margin-top: 12px;
+
+    color: #aebcc1;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DONJI DEO
+========================================================= */
+
+.transformations-bottom {
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* slider tačkice */
+
+.slider-progress {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.slider-progress span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    transition: 0.25s ease;
+}
+
+.slider-progress span.active {
+    width: 27px;
+
+    background: var(--turquoise);
+}
+
+
+/* CTA */
+
+.transformations-bottom > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--turquoise);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.transformations-bottom > a span {
+    font-size: 18px;
+
+    transition: transform 0.25s ease;
+}
+
+.transformations-bottom > a:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   TRANSFORMACIJE - TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .transform-card {
+        flex-basis: calc(50% - 10px);
+    }
+
+}
+
+
+/* =========================================================
+   TRANSFORMACIJE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .transformations {
+        padding: 65px 0;
+    }
+
+    .transformations-container {
+        width: 90%;
+    }
+
+    .transformations-heading {
+        align-items: flex-start;
+        gap: 20px;
+
+        margin-bottom: 32px;
+    }
+
+    .transformations h2 {
+        font-size: 45px;
+    }
+
+    .transformations-heading p {
+        font-size: 12px;
+    }
+
+    .transform-controls {
+        display: none;
+    }
+
+    .transform-card {
+        flex-basis: 88%;
+    }
+
+    .transform-images {
+        height: 380px;
+    }
+
+    .transformations-bottom {
+        margin-top: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+}
+
+/* =========================================================
+   PROGRAMI / USLUGE
+========================================================= */
+
+.programs {
+    position: relative;
+
+    padding: 100px 0 90px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35, 230, 209, 0.04),
+            transparent 35%
+        ),
+        #f3f7f7;
+
+    color: #071015;
+}
+
+
+/* DEKORACIJA */
+
+.programs::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -300px;
+    bottom: -280px;
+
+    transform: rotate(45deg);
+
+    border: 80px solid rgba(35, 230, 209, 0.045);
+}
+
+.programs::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -230px;
+    top: -180px;
+
+    transform: rotate(45deg);
+
+    border: 60px solid rgba(35, 230, 209, 0.055);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.programs-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   NASLOV
+========================================================= */
+
+.programs-heading {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+
+    align-items: end;
+
+    gap: 80px;
+
+    margin-bottom: 55px;
+}
+
+.programs-heading h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: 0.94;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+
+    color: #081419;
+}
+
+.programs-heading h2 strong {
+    display: block;
+
+    color: var(--turquoise-dark);
+
+    font-weight: 900;
+}
+
+.programs-heading > p {
+    max-width: 470px;
+
+    padding-bottom: 4px;
+
+    color: #63747a;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   KARTICA
+========================================================= */
+
+.program-card {
+    position: relative;
+
+    min-height: 510px;
+
+    padding: 32px 26px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #dfe7e8;
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 10px 35px rgba(7, 16, 21, 0.055);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(18, 185, 170, 0.45);
+
+    box-shadow:
+        0 22px 55px rgba(7, 16, 21, 0.12);
+}
+
+
+/* =========================================================
+   NAJPOPULARNIJI
+========================================================= */
+
+.program-card.featured {
+    transform: translateY(-12px);
+
+    border: 2px solid var(--turquoise);
+
+    box-shadow:
+        0 20px 55px rgba(12, 174, 159, 0.15);
+}
+
+.program-card.featured:hover {
+    transform: translateY(-19px);
+}
+
+.popular-badge {
+    position: absolute;
+
+    top: -15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 8px 18px;
+
+    border-radius: 100px;
+
+    background: var(--turquoise);
+
+    color: #051316;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 20px rgba(35, 230, 209, 0.25);
+}
+
+
+/* =========================================================
+   PREMIUM
+========================================================= */
+
+.program-card.premium {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3fbfa
+        );
+}
+
+
+/* =========================================================
+   IKONICA
+========================================================= */
+
+.program-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(35, 230, 209, 0.1);
+
+    color: var(--turquoise-dark);
+
+    font-size: 27px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.program-card:hover .program-icon {
+    transform: rotate(-4deg) scale(1.05);
+
+    background: var(--turquoise);
+
+    color: #071015;
+}
+
+
+/* =========================================================
+   NAZIV
+========================================================= */
+
+.program-card h3 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    color: #0b1b21;
+
+    font-size: 25px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   OPIS
+========================================================= */
+
+.program-description {
+    min-height: 65px;
+
+    margin-top: 13px;
+
+    color: #75848a;
+
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.program-card ul {
+    margin-top: 22px;
+
+    list-style: none;
+}
+
+.program-card li {
+    position: relative;
+
+    margin-bottom: 11px;
+
+    padding-left: 24px;
+
+    color: #405159;
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.program-card li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: -1px;
+
+    color: var(--turquoise-dark);
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   CENA
+========================================================= */
+
+.program-price {
+    margin-top: auto;
+    padding-top: 30px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+
+    color: #071015;
+}
+
+.program-price strong {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 35px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.program-price span {
+    margin-bottom: 3px;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   DUGME
+========================================================= */
+
+.program-card > a {
+    width: 100%;
+    min-height: 47px;
+
+    margin-top: 19px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border-radius: 100px;
+
+    background: #0b1c21;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.program-card.featured > a {
+    background: var(--turquoise);
+
+    color: #051316;
+
+    box-shadow:
+        0 8px 25px rgba(35, 230, 209, 0.2);
+}
+
+.program-card > a span {
+    font-size: 17px;
+
+    transition: transform 0.25s ease;
+}
+
+.program-card > a:hover {
+    transform: translateY(-2px);
+
+    background: var(--turquoise);
+
+    color: #051316;
+
+    box-shadow:
+        0 10px 30px rgba(35, 230, 209, 0.22);
+}
+
+.program-card > a:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   NAPOMENA
+========================================================= */
+
+.programs-note {
+    max-width: 700px;
+
+    margin: 48px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    text-align: center;
+}
+
+.programs-note > span {
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(35, 230, 209, 0.15);
+
+    color: var(--turquoise-dark);
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.programs-note p {
+    color: #75848a;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.programs-note a {
+    color: #0a9d91;
+
+    font-weight: 800;
+
+    border-bottom: 1px solid rgba(10, 157, 145, 0.3);
+}
+
+
+/* =========================================================
+   PROGRAMI - TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .programs-heading {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    .program-card.featured {
+        transform: none;
+    }
+
+    .program-card.featured:hover {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================================================
+   PROGRAMI - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .programs {
+        padding: 65px 0;
+    }
+
+    .programs-container {
+        width: 90%;
+    }
+
+    .programs-heading {
+        margin-bottom: 40px;
+    }
+
+    .programs-heading h2 {
+        font-size: 45px;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .program-card {
+        min-height: auto;
+
+        padding: 28px 23px 23px;
+    }
+
+    .program-description {
+        min-height: auto;
+    }
+
+    .program-card ul {
+        margin-bottom: 20px;
+    }
+
+    .program-price {
+        padding-top: 10px;
+    }
+
+    .programs-note {
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+}
+
+/* =========================================================
+   KAKO FUNKCIONIŠE
+========================================================= */
+
+.process {
+    position: relative;
+
+    padding: 100px 0 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(35, 230, 209, 0.08),
+            transparent 30%
+        ),
+        #071015;
+
+    color: #ffffff;
+}
+
+
+/* POZADINSKA DEKORACIJA */
+
+.process::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background: linear-gradient(
+        transparent,
+        rgba(35, 230, 209, 0.07),
+        transparent
+    );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.process-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   NASLOV
+========================================================= */
+
+.process-heading {
+    max-width: 720px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+}
+
+.process-heading .section-label {
+    justify-content: center;
+}
+
+.process-heading h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(50px, 5vw, 72px);
+    line-height: 0.92;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+.process-heading h2 strong {
+    display: block;
+
+    color: var(--turquoise);
+
+    font-weight: 900;
+}
+
+.process-heading > p {
+    max-width: 570px;
+
+    margin: 20px auto 0;
+
+    color: #91a4aa;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   KORACI
+========================================================= */
+
+.process-steps {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 0;
+}
+
+
+/* LINIJA */
+
+.process-steps::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    left: 10%;
+    right: 10%;
+    top: 89px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(35, 230, 209, 0.15),
+        var(--turquoise),
+        rgba(35, 230, 209, 0.15)
+    );
+
+    box-shadow:
+        0 0 15px rgba(35, 230, 209, 0.15);
+}
+
+
+/* =========================================================
+   JEDAN KORAK
+========================================================= */
+
+.process-step {
+    position: relative;
+    z-index: 2;
+
+    min-height: 330px;
+
+    padding: 0 20px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   VELIKI BROJ
+========================================================= */
+
+.process-number {
+    height: 70px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 70px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: rgba(255, 255, 255, 0.055);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.process-step:hover .process-number {
+    transform: translateY(-5px);
+
+    color: rgba(35, 230, 209, 0.13);
+}
+
+
+/* =========================================================
+   TAČKA NA LINIJI
+========================================================= */
+
+.process-dot {
+    position: relative;
+    z-index: 3;
+
+    width: 38px;
+    height: 38px;
+
+    margin: 0 auto 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(35, 230, 209, 0.4);
+    border-radius: 50%;
+
+    background: #071015;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.process-dot span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--turquoise);
+
+    box-shadow:
+        0 0 12px rgba(35, 230, 209, 0.8);
+}
+
+.process-step:hover .process-dot {
+    transform: scale(1.12);
+
+    background: var(--turquoise);
+
+    box-shadow:
+        0 0 30px rgba(35, 230, 209, 0.25);
+}
+
+.process-step:hover .process-dot span {
+    background: #071015;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SADRŽAJ KORAKA
+========================================================= */
+
+.process-content {
+    max-width: 190px;
+
+    margin: auto;
+}
+
+.process-small {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--turquoise);
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1.4px;
+}
+
+.process-content h3 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 25px;
+    line-height: 1;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.process-content p {
+    margin-top: 13px;
+
+    color: #82969d;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA NA DNU
+========================================================= */
+
+.process-cta {
+    position: relative;
+
+    margin-top: 30px;
+    padding: 28px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(35, 230, 209, 0.06)
+        );
+}
+
+.process-cta::after {
+    content: "";
+
+    position: absolute;
+
+    right: -80px;
+    top: -130px;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(35, 230, 209, 0.07);
+
+    filter: blur(20px);
+}
+
+.process-cta > div {
+    position: relative;
+    z-index: 2;
+}
+
+.process-cta > div > span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #84989f;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.process-cta strong {
+    display: block;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 27px;
+
+    text-transform: uppercase;
+}
+
+
+/* DUGME */
+
+.process-cta > a {
+    position: relative;
+    z-index: 2;
+
+    flex-shrink: 0;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border-radius: 100px;
+
+    background: var(--turquoise);
+
+    color: #051316;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 10px 30px rgba(35, 230, 209, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.process-cta > a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 35px rgba(35, 230, 209, 0.3);
+}
+
+.process-cta > a span {
+    font-size: 18px;
+
+    transition: transform 0.25s ease;
+}
+
+.process-cta > a:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps::before {
+        left: 38px;
+        right: auto;
+        top: 35px;
+        bottom: 35px;
+
+        width: 1px;
+        height: auto;
+
+        background: linear-gradient(
+            to bottom,
+            rgba(35, 230, 209, 0.1),
+            var(--turquoise),
+            rgba(35, 230, 209, 0.1)
+        );
+    }
+
+    .process-step {
+        min-height: auto;
+
+        padding: 20px 0;
+
+        display: grid;
+        grid-template-columns: 76px 1fr;
+
+        text-align: left;
+    }
+
+    .process-number {
+        display: none;
+    }
+
+    .process-dot {
+        grid-column: 1;
+
+        margin: 0 auto;
+    }
+
+    .process-content {
+        grid-column: 2;
+
+        max-width: 500px;
+
+        margin: 0;
+
+        padding: 0 0 30px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .process {
+        padding: 65px 0;
+    }
+
+    .process-container {
+        width: 90%;
+    }
+
+    .process-heading {
+        margin-bottom: 45px;
+    }
+
+    .process-heading h2 {
+        font-size: 45px;
+    }
+
+    .process-heading > p {
+        font-size: 12px;
+    }
+
+    .process-steps::before {
+        left: 26px;
+    }
+
+    .process-step {
+        grid-template-columns: 52px 1fr;
+    }
+
+    .process-dot {
+        width: 34px;
+        height: 34px;
+    }
+
+    .process-content {
+        padding-left: 17px;
+    }
+
+    .process-content h3 {
+        font-size: 23px;
+    }
+
+    .process-content p {
+        max-width: 300px;
+    }
+
+    .process-cta {
+        margin-top: 25px;
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .process-cta strong {
+        font-size: 24px;
+    }
+
+    .process-cta > a {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   ISKUSTVA KLIJENATA
+========================================================= */
+
+.testimonials {
+    position: relative;
+
+    padding: 100px 0 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(35, 230, 209, 0.12),
+            transparent 22%
+        ),
+        #f4f7f7;
+
+    color: #071015;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.testimonials-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   NASLOV
+========================================================= */
+
+.testimonials-heading {
+    margin-bottom: 50px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.testimonials-heading h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: 0.94;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+.testimonials-heading h2 strong {
+    display: block;
+
+    color: var(--turquoise-dark);
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   UKUPNA OCENA
+========================================================= */
+
+.testimonials-rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonials-rating > strong {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 50px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.testimonials-rating > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials-rating span {
+    color: #f5b900;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.testimonials-rating small {
+    margin-top: 5px;
+
+    color: #79898f;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   KARTICE
+========================================================= */
+
+.testimonial-card {
+    position: relative;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    border: 1px solid #dfe7e8;
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(7, 16, 21, 0.055);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(18, 185, 170, 0.35);
+
+    box-shadow:
+        0 22px 50px rgba(7, 16, 21, 0.1);
+}
+
+
+/* =========================================================
+   GLAVNA RECENZIJA
+========================================================= */
+
+.testimonial-main {
+    min-height: 430px;
+
+    padding: 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(35, 230, 209, 0.13),
+            transparent 35%
+        ),
+        #ffffff;
+}
+
+.quote-mark {
+    position: absolute;
+
+    right: 35px;
+    top: 5px;
+
+    font-family: Georgia, serif;
+
+    font-size: 160px;
+    line-height: 1;
+
+    color: rgba(18, 185, 170, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ZVEZDICE
+========================================================= */
+
+.testimonial-stars {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 20px;
+
+    color: #f5b900;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   CITAT
+========================================================= */
+
+.testimonial-card blockquote {
+    position: relative;
+    z-index: 2;
+
+    color: #283b42;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    font-weight: 500;
+}
+
+.testimonial-main blockquote {
+    max-width: 620px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.65;
+
+    font-weight: 600;
+
+    color: #102127;
+}
+
+
+/* =========================================================
+   DONJI DEO GLAVNE RECENZIJE
+========================================================= */
+
+.testimonial-bottom {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 40px;
+
+    padding-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid #e5ebec;
+}
+
+
+/* =========================================================
+   OSOBA
+========================================================= */
+
+.testimonial-person {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.testimonial-avatar {
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #132a31,
+            #071015
+        );
+
+    color: var(--turquoise);
+
+    font-size: 15px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 0 4px rgba(35, 230, 209, 0.08);
+}
+
+.testimonial-person strong {
+    display: block;
+
+    color: #102127;
+
+    font-size: 12px;
+}
+
+.testimonial-person span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #809096;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   VERIFIKOVANO
+========================================================= */
+
+.verified {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #7b8c91;
+
+    font-size: 9px;
+}
+
+.verified span {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(35, 230, 209, 0.15);
+
+    color: var(--turquoise-dark);
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   DESNA STRANA
+========================================================= */
+
+.testimonials-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.testimonials-side .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.small-quote {
+    margin-top: -12px;
+
+    font-family: Georgia, serif;
+
+    color: rgba(18, 185, 170, 0.16);
+
+    font-size: 65px;
+    line-height: 1;
+}
+
+.testimonials-side blockquote {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   TRUST BAR
+========================================================= */
+
+.testimonials-trust {
+    margin-top: 45px;
+    padding: 25px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px;
+
+    border: 1px solid #dfe7e8;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(10px);
+}
+
+.testimonials-trust > div {
+    text-align: center;
+}
+
+.testimonials-trust strong {
+    display: block;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    color: #102127;
+
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.testimonials-trust span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #819096;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.testimonials-trust i {
+    width: 1px;
+    height: 35px;
+
+    background: #dce5e6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-main {
+        min-height: 380px;
+    }
+
+    .testimonials-side {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .testimonials {
+        padding: 65px 0;
+    }
+
+    .testimonials-container {
+        width: 90%;
+    }
+
+    .testimonials-heading {
+        align-items: flex-start;
+        flex-direction: column;
+
+        margin-bottom: 35px;
+    }
+
+    .testimonials-heading h2 {
+        font-size: 45px;
+    }
+
+    .testimonials-rating > strong {
+        font-size: 42px;
+    }
+
+    .testimonial-main {
+        min-height: auto;
+
+        padding: 30px 25px;
+    }
+
+    .testimonial-main blockquote {
+        font-size: 17px;
+    }
+
+    .testimonial-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+
+        margin-top: 30px;
+    }
+
+    .testimonials-side {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        padding: 25px;
+    }
+
+    .testimonials-trust {
+        padding: 25px 15px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px 10px;
+    }
+
+    .testimonials-trust i {
+        display: none;
+    }
+
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+    position: relative;
+
+    padding: 105px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(35, 230, 209, 0.08),
+            transparent 28%
+        ),
+        #071015;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.faq-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 100px;
+}
+
+
+/* =========================================================
+   LEVA STRANA
+========================================================= */
+
+.faq-intro {
+    position: sticky;
+
+    top: 120px;
+
+    align-self: start;
+}
+
+.faq-intro .section-label {
+    color: var(--turquoise);
+}
+
+.faq-intro .section-label span {
+    background: var(--turquoise);
+}
+
+.faq-intro h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(55px, 6vw, 82px);
+    line-height: 0.88;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: -1px;
+}
+
+.faq-intro h2 strong {
+    display: block;
+
+    color: var(--turquoise);
+
+    font-weight: 900;
+}
+
+.faq-intro > p {
+    max-width: 390px;
+
+    margin-top: 25px;
+
+    color: #8fa1a7;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   POMOĆ
+========================================================= */
+
+.faq-help {
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.faq-help > span {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(35, 230, 209, 0.3);
+    border-radius: 50%;
+
+    background: rgba(35, 230, 209, 0.07);
+
+    color: var(--turquoise);
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.faq-help small {
+    display: block;
+
+    color: #71868d;
+
+    font-size: 9px;
+}
+
+.faq-help strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FAQ KONTAKT
+========================================================= */
+
+.faq-contact {
+    width: fit-content;
+
+    margin-top: 22px;
+
+    padding: 14px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.faq-contact span {
+    color: var(--turquoise);
+
+    font-size: 17px;
+}
+
+.faq-contact:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--turquoise);
+
+    background: var(--turquoise);
+
+    color: #071015;
+}
+
+.faq-contact:hover span {
+    color: #071015;
+}
+
+
+/* =========================================================
+   FAQ LISTA
+========================================================= */
+
+.faq-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+/* =========================================================
+   PITANJE
+========================================================= */
+
+.faq-question {
+    width: 100%;
+
+    padding: 25px 0;
+
+    display: grid;
+    grid-template-columns: 45px 1fr 42px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+/* BROJ */
+
+.faq-number {
+    color: var(--turquoise);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* NASLOV */
+
+.faq-title {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 21px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    transition: color 0.25s ease;
+}
+
+
+/* PLUS */
+
+.faq-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    justify-self: end;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+
+    color: var(--turquoise);
+
+    font-size: 21px;
+    font-weight: 300;
+
+    transition:
+        transform 0.35s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* HOVER */
+
+.faq-question:hover .faq-title {
+    color: var(--turquoise);
+}
+
+.faq-question:hover .faq-icon {
+    border-color: var(--turquoise);
+
+    background: rgba(35, 230, 209, 0.08);
+}
+
+
+/* =========================================================
+   ODGOVOR
+========================================================= */
+
+.faq-answer {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition:
+        grid-template-rows 0.4s ease,
+        opacity 0.35s ease;
+
+    opacity: 0;
+}
+
+.faq-answer > div {
+    overflow: hidden;
+}
+
+.faq-answer p {
+    max-width: 620px;
+
+    padding:
+        0
+        55px
+        0
+        60px;
+
+    color: #84979d;
+
+    font-size: 12px;
+    line-height: 1.8;
+
+    transition: padding-bottom 0.4s ease;
+}
+
+
+/* =========================================================
+   OTVORENO PITANJE
+========================================================= */
+
+.faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+}
+
+.faq-item.active .faq-answer p {
+    padding-bottom: 27px;
+}
+
+.faq-item.active .faq-title {
+    color: var(--turquoise);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+
+    border-color: var(--turquoise);
+
+    background: var(--turquoise);
+
+    color: #071015;
+}
+
+
+/* =========================================================
+   FAQ TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .faq-container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .faq-intro {
+        position: relative;
+
+        top: auto;
+    }
+
+}
+
+
+/* =========================================================
+   FAQ MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .faq {
+        padding: 65px 0;
+    }
+
+    .faq-container {
+        width: 90%;
+
+        gap: 45px;
+    }
+
+    .faq-intro h2 {
+        font-size: 55px;
+    }
+
+    .faq-question {
+        padding: 21px 0;
+
+        grid-template-columns: 32px 1fr 36px;
+
+        gap: 10px;
+    }
+
+    .faq-title {
+        font-size: 18px;
+    }
+
+    .faq-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .faq-answer p {
+        padding-left: 42px;
+        padding-right: 10px;
+
+        font-size: 11px;
+    }
+
+}
+
+/* =========================================================
+   KONTAKT
+========================================================= */
+
+.contact {
+    position: relative;
+
+    padding: 105px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 60%,
+            rgba(35, 230, 209, 0.08),
+            transparent 28%
+        ),
+        #0a171d;
+
+    color: #ffffff;
+}
+
+.contact-container {
+    width: min(92%, var(--container));
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* =========================================================
+   LEVA STRANA
+========================================================= */
+
+.contact-content h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(55px, 6vw, 80px);
+    line-height: 0.88;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: -1px;
+}
+
+.contact-content h2 strong {
+    display: block;
+
+    color: var(--turquoise);
+
+    font-weight: 900;
+}
+
+.contact-intro {
+    max-width: 470px;
+
+    margin-top: 25px;
+
+    color: #91a4aa;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BENEFITI
+========================================================= */
+
+.contact-benefits {
+    margin-top: 38px;
+}
+
+.contact-benefit {
+    padding: 17px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-benefit > span {
+    color: var(--turquoise);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.contact-benefit strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.contact-benefit small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #778c93;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   DIREKTAN KONTAKT
+========================================================= */
+
+.contact-direct {
+    margin-top: 35px;
+}
+
+.contact-direct > span {
+    color: #70858c;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.contact-direct-links {
+    margin-top: 12px;
+
+    display: flex;
+    gap: 10px;
+}
+
+.contact-social {
+    padding: 10px 16px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.contact-social span {
+    color: var(--turquoise);
+}
+
+.contact-social:hover {
+    border-color: var(--turquoise);
+
+    background: rgba(35, 230, 209, 0.08);
+}
+
+
+/* =========================================================
+   FORMA
+========================================================= */
+
+.contact-form-wrapper {
+    position: relative;
+
+    padding: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   FORM TOP
+========================================================= */
+
+.form-top > span {
+    color: var(--turquoise);
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.form-top strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 31px;
+
+    text-transform: uppercase;
+}
+
+.form-top p {
+    margin-top: 8px;
+
+    color: #7f939a;
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form {
+    margin-top: 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #9aacb2;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    outline: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #536970;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--turquoise);
+
+    background: rgba(35, 230, 209, 0.035);
+
+    box-shadow:
+        0 0 0 3px rgba(35, 230, 209, 0.07);
+}
+
+.form-group select option {
+    background: #0a171d;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.form-submit {
+    width: 100%;
+    min-height: 55px;
+
+    margin-top: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    border: 0;
+    border-radius: 100px;
+
+    background: var(--turquoise);
+
+    color: #051316;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(35, 230, 209, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-submit span {
+    font-size: 19px;
+
+    transition: transform 0.25s ease;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 40px rgba(35, 230, 209, 0.3);
+}
+
+.form-submit:hover span {
+    transform: translateX(5px);
+}
+
+.form-note {
+    margin-top: 13px;
+
+    text-align: center;
+
+    color: #60767d;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta {
+    position: relative;
+
+    padding: 115px 20px;
+
+    overflow: hidden;
+
+    background: var(--turquoise);
+
+    color: #061317;
+
+    text-align: center;
+}
+
+.final-cta::before {
+    content: "TRANSFORM";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(120px, 18vw, 280px);
+
+    font-weight: 900;
+
+    color: rgba(255, 255, 255, 0.09);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+.final-cta-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 600px;
+    height: 300px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    filter: blur(80px);
+}
+
+.final-cta-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.final-small {
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.final-cta h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(55px, 7vw, 92px);
+    line-height: 0.88;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: -1px;
+}
+
+.final-cta h2 strong {
+    display: block;
+
+    font-weight: 900;
+}
+
+.final-cta p {
+    margin-top: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.final-cta a {
+    min-height: 55px;
+
+    margin-top: 30px;
+    padding: 0 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    border-radius: 100px;
+
+    background: #071015;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 12px 30px rgba(7, 16, 21, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.final-cta a:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(7, 16, 21, 0.3);
+}
+
+.final-cta a span {
+    color: var(--turquoise);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 70px 0 25px;
+
+    background: #040b0e;
+
+    color: #ffffff;
+}
+
+.footer-container {
+    width: min(92%, var(--container));
+
+    margin: auto;
+}
+
+.footer-main {
+    padding-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1fr;
+
+    gap: 60px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* BRAND */
+
+.footer-brand p {
+    max-width: 300px;
+
+    margin-top: 20px;
+
+    color: #687c83;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* KOLONE */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.footer-column > strong {
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column a {
+    width: fit-content;
+
+    color: #73868d;
+
+    font-size: 10px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-column a:hover {
+    transform: translateX(3px);
+
+    color: var(--turquoise);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    padding-top: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #4e6269;
+
+    font-size: 8px;
+}
+
+.footer-bottom span {
+    color: var(--turquoise);
+}
+
+
+/* =========================================================
+   CONTACT TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .footer-main {
+        grid-template-columns: 2fr 1fr 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-column:last-child {
+        grid-column: 2;
+    }
+
+}
+
+
+/* =========================================================
+   CONTACT MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact {
+        padding: 65px 0;
+    }
+
+    .contact-container {
+        width: 90%;
+
+        gap: 45px;
+    }
+
+    .contact-content h2 {
+        font-size: 55px;
+    }
+
+    .contact-direct-links {
+        flex-wrap: wrap;
+    }
+
+    .contact-form-wrapper {
+        padding: 28px 20px;
+
+        border-radius: 17px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    /* FINAL CTA */
+
+    .final-cta {
+        padding: 85px 20px;
+    }
+
+    .final-cta h2 {
+        font-size: 55px;
+    }
+
+    .final-cta a {
+        width: 100%;
+        max-width: 340px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+        padding-top: 55px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-column:last-child {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+
+/* =========================================================
+   STICKY HEADER
+========================================================= */
+
+.site-header {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/* HEADER NAKON SKROLOVANJA */
+
+.site-header.scrolled {
+    position: fixed;
+
+    background: rgba(5, 14, 18, 0.92);
+
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* malo smanji header kada skrolujemo */
+
+.site-header.scrolled .header-container {
+    height: 70px;
+}
+
+
+/* glatka promena visine */
+
+.header-container {
+    transition: height 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    .site-header {
+        z-index: 1000;
+    }
+
+    .site-header.menu-open {
+        position: fixed;
+
+        background: #061015;
+
+        height: 100vh;
+        height: 100dvh;
+
+        overflow-y: auto;
+    }
+
+
+    /* =====================================================
+       HAMBURGER
+    ===================================================== */
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1002;
+
+        display: block;
+    }
+
+    .menu-toggle span {
+        position: relative;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease,
+            width 0.3s ease;
+    }
+
+
+    /* X */
+
+    .site-header.menu-open
+    .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .site-header.menu-open
+    .menu-toggle span:nth-child(2) {
+        opacity: 0;
+
+        width: 0;
+    }
+
+    .site-header.menu-open
+    .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       MENI
+    ===================================================== */
+
+    .mobile-menu {
+        width: min(90%, 600px);
+
+        margin: auto;
+
+        padding:
+            30px
+            0
+            50px;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .site-header.menu-open .mobile-menu {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+
+        pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       LINKOVI
+    ===================================================== */
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-nav a {
+        position: relative;
+
+        min-height: 62px;
+
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        font-family: "Barlow Condensed", sans-serif;
+
+        color: #ffffff;
+
+        font-size: 25px;
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        transition:
+            color 0.25s ease,
+            padding-left 0.25s ease;
+    }
+
+    .mobile-nav a > span {
+        width: 25px;
+
+        color: var(--turquoise);
+
+        font-family: "Manrope", sans-serif;
+
+        font-size: 8px;
+        font-weight: 800;
+    }
+
+    .mobile-nav a:hover {
+        padding-left: 8px;
+
+        color: var(--turquoise);
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .mobile-menu-cta {
+        width: 100%;
+        min-height: 55px;
+
+        margin-top: 30px;
+
+        padding: 0 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        border-radius: 100px;
+
+        background: var(--turquoise);
+
+        color: #041114;
+
+        font-size: 10px;
+        font-weight: 900;
+
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-menu-cta span {
+        font-size: 19px;
+    }
+
+
+    /* kada je meni otvoren
+       ne prikazujemo ostatak header CTA */
+
+    .site-header.menu-open .header-container {
+        height: 75px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP - MOBILE MENU NIKAD NE PRIKAZUJ
+========================================================= */
+
+@media (min-width: 901px) {
+
+    .mobile-menu {
+        display: none !important;
+    }
+
+}
+
+/* =========================================================
+   SCROLL ANIMACIJE
+========================================================= */
+
+/*
+   Elementi koje JavaScript označi za animaciju.
+   Dok nisu vidljivi nalaze se malo niže i providni su.
+*/
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+
+/* KADA ELEMENT UĐE U EKRAN */
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ULAZ SA LEVE STRANE
+========================================================= */
+
+.reveal-left {
+    opacity: 0;
+
+    transform: translateX(-45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   ULAZ SA DESNE STRANE
+========================================================= */
+
+.reveal-right {
+    opacity: 0;
+
+    transform: translateX(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   SCALE ANIMACIJA
+========================================================= */
+
+.reveal-scale {
+    opacity: 0;
+
+    transform: scale(0.94);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.reveal-scale.visible {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   DELAY
+========================================================= */
+
+.reveal-delay-1 {
+    transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.16s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.24s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.32s;
+}
+
+.reveal-delay-5 {
+    transition-delay: 0.40s;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+/*
+   Ako korisnik u telefonu ili računaru ima uključeno
+   "Reduce motion", animacije se automatski gase.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+/* =========================================================
+   KALKULATOR KALORIJA
+========================================================= */
+
+.calorie-calculator {
+    position: relative;
+
+    padding: 105px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(35, 230, 209, 0.08),
+            transparent 30%
+        ),
+        #071015;
+
+    color: #ffffff;
+}
+
+.calculator-container {
+    width: min(92%, var(--container));
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   NASLOV
+========================================================= */
+
+.calculator-heading {
+    margin-bottom: 55px;
+
+    display: grid;
+    grid-template-columns: 1fr 0.55fr;
+
+    align-items: end;
+
+    gap: 60px;
+}
+
+.calculator-heading h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(50px, 5vw, 70px);
+    line-height: 0.92;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: -1px;
+}
+
+.calculator-heading h2 strong {
+    display: block;
+
+    color: var(--turquoise);
+
+    font-weight: 900;
+}
+
+.calculator-heading > p {
+    color: #81949a;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.calculator-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   KARTICE
+========================================================= */
+
+.calculator-form-card,
+.calculator-result-card {
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+.calculator-form-card {
+    padding: 35px;
+}
+
+.calculator-result-card {
+    position: relative;
+
+    min-height: 650px;
+
+    padding: 40px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 15%,
+            rgba(35, 230, 209, 0.12),
+            transparent 30%
+        ),
+        rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.calculator-card-top {
+    margin-bottom: 30px;
+
+    padding-bottom: 23px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.calculator-card-top > span {
+    color: var(--turquoise);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.calculator-card-top strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.calculator-card-top small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #657a81;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   POLJA
+========================================================= */
+
+.calculator-field {
+    margin-bottom: 22px;
+}
+
+.calculator-field > label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #8da0a6;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.calculator-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.calculator-input {
+    position: relative;
+}
+
+.calculator-input input {
+    width: 100%;
+    height: 50px;
+
+    padding:
+        0
+        60px
+        0
+        15px;
+
+    outline: none;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 9px;
+
+    background:
+        rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    transition: border-color 0.25s ease;
+}
+
+.calculator-input span {
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #60747b;
+
+    font-size: 9px;
+}
+
+.calculator-input input:focus {
+    border-color: var(--turquoise);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.calculator-field select {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 15px;
+
+    outline: none;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 9px;
+
+    background: #0a171d;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.calculator-field select:focus {
+    border-color: var(--turquoise);
+}
+
+
+/* =========================================================
+   POL
+========================================================= */
+
+.gender-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.gender-option {
+    position: relative;
+
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 9px;
+
+    color: #7d9197;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.gender-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.gender-option.active {
+    border-color: var(--turquoise);
+
+    background:
+        rgba(35, 230, 209, 0.08);
+
+    color: var(--turquoise);
+}
+
+
+/* =========================================================
+   CILJ
+========================================================= */
+
+.goal-options {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+.goal-option {
+    position: relative;
+
+    min-height: 75px;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.goal-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.goal-icon {
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: #71858c;
+
+    font-size: 12px;
+}
+
+.goal-option strong {
+    display: block;
+
+    font-size: 9px;
+}
+
+.goal-option small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #5f737a;
+
+    font-size: 7px;
+}
+
+.goal-option.active {
+    border-color: var(--turquoise);
+
+    background:
+        rgba(35, 230, 209, 0.07);
+}
+
+.goal-option.active .goal-icon {
+    background: var(--turquoise);
+
+    color: #071015;
+}
+
+
+/* =========================================================
+   CALCULATE BUTTON
+========================================================= */
+
+.calculator-submit {
+    width: 100%;
+    height: 55px;
+
+    margin-top: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: 0;
+    border-radius: 100px;
+
+    background: var(--turquoise);
+
+    color: #061316;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.calculator-submit span {
+    font-size: 18px;
+
+    transition: transform 0.25s ease;
+}
+
+.calculator-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(35, 230, 209, 0.2);
+}
+
+.calculator-submit:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.result-placeholder {
+    width: 100%;
+
+    text-align: center;
+}
+
+.result-circle {
+    width: 110px;
+    height: 110px;
+
+    margin:
+        0
+        auto
+        25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(35, 230, 209, 0.3);
+
+    border-radius: 50%;
+
+    background:
+        rgba(35, 230, 209, 0.05);
+
+    box-shadow:
+        0 0 50px
+        rgba(35, 230, 209, 0.08);
+}
+
+.result-circle span {
+    color: var(--turquoise);
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.result-placeholder > strong {
+    display: block;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size: 25px;
+
+    text-transform: uppercase;
+}
+
+.result-placeholder > p {
+    max-width: 300px;
+
+    margin:
+        10px
+        auto
+        0;
+
+    color: #647980;
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   REZULTATI
+========================================================= */
+
+.calculator-results {
+    width: 100%;
+
+    display: none;
+}
+
+.calculator-results.show {
+    display: block;
+
+    animation:
+        calculatorResult
+        0.45s ease;
+}
+
+@keyframes calculatorResult {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.result-label {
+    color: var(--turquoise);
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   GLAVNI REZULTAT
+========================================================= */
+
+.main-calorie-result {
+    margin-top: 7px;
+
+    display: flex;
+    align-items: baseline;
+
+    gap: 10px;
+}
+
+.main-calorie-result strong {
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(65px, 7vw, 95px);
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.main-calorie-result > span {
+    color: #71868d;
+
+    font-size: 11px;
+}
+
+.result-goal-text {
+    margin-top: 5px;
+
+    color: #85999f;
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BMR / TDEE
+========================================================= */
+
+.energy-results {
+    margin-top: 28px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 11px;
+
+    overflow: hidden;
+}
+
+.energy-results > div {
+    padding: 17px 20px;
+}
+
+.energy-results > div:first-child {
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.energy-results span {
+    display: block;
+
+    color: #64787f;
+
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.energy-results strong {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size: 27px;
+}
+
+.energy-results small {
+    margin-left: 3px;
+
+    color: #61757c;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RASPON
+========================================================= */
+
+.calorie-range {
+    margin-top: 13px;
+
+    padding: 14px 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(35, 230, 209, 0.06);
+}
+
+.calorie-range span {
+    color: #83969c;
+
+    font-size: 8px;
+}
+
+.calorie-range strong {
+    color: var(--turquoise);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MAKROI
+========================================================= */
+
+.macro-section {
+    margin-top: 27px;
+}
+
+.macro-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.macro-heading span {
+    color: #71858c;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 0.7px;
+}
+
+.macro-heading small {
+    color: #52676e;
+
+    font-size: 8px;
+}
+
+.macro-grid {
+    margin-top: 12px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+.macro-item {
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-radius: 9px;
+}
+
+.macro-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--turquoise);
+}
+
+.macro-item small {
+    display: block;
+
+    color: #61757c;
+
+    font-size: 7px;
+}
+
+.macro-item strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.calculator-cta {
+    margin-top: 27px;
+
+    padding-top: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.calculator-cta > div > span {
+    display: block;
+
+    color: #62767d;
+
+    font-size: 8px;
+}
+
+.calculator-cta > div > strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+}
+
+.calculator-cta a {
+    padding: 12px 17px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border-radius: 100px;
+
+    background: var(--turquoise);
+
+    color: #061316;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+.calculator-disclaimer {
+    margin-top: 18px;
+
+    color: #4f646b;
+
+    font-size: 7px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .calculator-heading {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .calculator-heading > p {
+        max-width: 500px;
+    }
+
+    .calculator-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-result-card {
+        min-height: 550px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .calorie-calculator {
+        padding: 65px 0;
+    }
+
+    .calculator-container {
+        width: 90%;
+    }
+
+    .calculator-heading {
+        margin-bottom: 35px;
+    }
+
+    .calculator-heading h2 {
+        font-size: 46px;
+    }
+
+    .calculator-form-card,
+    .calculator-result-card {
+        padding: 25px 20px;
+
+        border-radius: 16px;
+    }
+
+    .calculator-row {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-options {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-option {
+        min-height: 60px;
+    }
+
+    .calculator-result-card {
+        min-height: 480px;
+    }
+
+    .main-calorie-result strong {
+        font-size: 70px;
+    }
+
+    .macro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .calculator-cta a {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   SERTIFIKATI - SEKCIJA
+========================================================= */
+
+.certificates-section {
+    position: relative;
+    overflow: hidden;
+
+    padding: 85px 0 95px;
+
+    background: #071015;
+    color: #ffffff;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+
+/* =========================================================
+   NASLOV SEKCIJE
+========================================================= */
+
+.certificates-heading {
+    width: min(92%, 1240px);
+    margin: 0 auto 45px;
+}
+
+.certificates-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    color: #23e6d1;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.certificates-label span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #23e6d1;
+
+    box-shadow: 0 0 12px rgba(35,230,209,0.6);
+}
+
+.certificates-heading h2 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(42px, 5vw, 65px);
+    font-weight: 900;
+    line-height: 0.95;
+
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.certificates-heading h2 strong {
+    display: block;
+
+    color: #23e6d1;
+    font-weight: 900;
+}
+
+.certificates-heading p {
+    margin-top: 20px;
+
+    color: #aebbc0;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.certificates-slider {
+    position: relative;
+
+    width: 100%;
+    overflow: hidden;
+
+    padding: 12px 0 20px;
+
+    /* Blagi prelaz na ivicama */
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 6%,
+        black 94%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 6%,
+        black 94%,
+        transparent 100%
+    );
+}
+
+
+/* =========================================================
+   POKRETNA TRAKA
+========================================================= */
+
+.certificates-track {
+    display: flex;
+    align-items: stretch;
+    gap: 22px;
+
+    width: max-content;
+
+    animation: certificates-scroll 35s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* Zaustavljanje kada se predje misem */
+
+.certificates-slider:hover .certificates-track {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   KARTICE
+========================================================= */
+
+.certificate-card {
+    position: relative;
+    flex: 0 0 260px;
+
+    padding: 12px;
+
+    border: 1px solid rgba(35,230,209,0.14);
+    border-radius: 16px;
+
+    background: #0d2027;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(35,230,209,0.55);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   FOTOGRAFIJA SERTIFIKATA
+========================================================= */
+
+.certificate-card img {
+    display: block;
+
+    width: 100%;
+    height: 175px;
+
+    object-fit: contain;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #e8eeed;
+}
+
+
+/* =========================================================
+   INFORMACIJE ISPOD SLIKE
+========================================================= */
+
+.certificate-info {
+    padding: 16px 7px 8px;
+}
+
+.certificate-info span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #23e6d1;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.certificate-info h3 {
+    font-family: "Manrope", sans-serif;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BESKONACNA ANIMACIJA
+========================================================= */
+
+/*
+   JavaScript ce duplicirati 6 kartica.
+
+   Zbog toga pomeramo traku za polovinu
+   njenog ukupnog sadrzaja, uz korekciju
+   razmaka izmedju kartica.
+*/
+
+@keyframes certificates-scroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 11px));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .certificates-section {
+        padding: 70px 0 75px;
+    }
+
+    .certificates-heading {
+        margin-bottom: 35px;
+    }
+
+    .certificate-card {
+        flex-basis: 230px;
+    }
+
+    .certificate-card img {
+        height: 160px;
+    }
+
+    .certificates-track {
+        gap: 18px;
+        animation-duration: 32s;
+    }
+
+    @keyframes certificates-scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(calc(-50% - 9px));
+        }
+    }
+
+}
+
+
+/* =========================================================
+   MOBILNI TELEFONI
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .certificates-section {
+        padding: 55px 0 65px;
+    }
+
+    .certificates-heading {
+        width: 90%;
+        margin-bottom: 28px;
+    }
+
+    .certificates-label {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .certificates-heading h2 {
+        font-size: 43px;
+    }
+
+    .certificates-heading p {
+        font-size: 12px;
+    }
+
+    .certificate-card {
+        flex-basis: 200px;
+        padding: 9px;
+    }
+
+    .certificate-card img {
+        height: 140px;
+        padding: 8px;
+    }
+
+    .certificate-info {
+        padding: 13px 5px 7px;
+    }
+
+    .certificate-info h3 {
+        font-size: 12px;
+    }
+
+    .certificates-track {
+        gap: 14px;
+        animation-duration: 28s;
+    }
+
+    @keyframes certificates-scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(calc(-50% - 7px));
+        }
+    }
+
+}
+
+
+/* =========================================================
+   PRISTUPACNOST - SMANJENO KRETANJE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .certificates-track {
+        animation: none;
+    }
+
+    .certificates-slider {
+        overflow-x: auto;
+    }
+
+}
+
+
+/* =========================================================
+   SERTIFIKATI - PRECIZNA BESKONACNA ANIMACIJA
+========================================================= */
+
+.certificates-track {
+    --certificates-distance: 1692px;
+
+    animation-name: certificates-loop;
+}
+
+@keyframes certificates-loop {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(
+            calc(-1 * var(--certificates-distance))
+        );
+    }
+
+}
+
