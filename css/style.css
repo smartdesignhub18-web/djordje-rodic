@@ -4991,15 +4991,18 @@ img {
 
 /* HEADER NAKON SKROLOVANJA */
 
+
+/* HEADER NAKON SKROLOVANJA */
+
 .site-header.scrolled {
     position: fixed;
 
-    background: rgba(5, 14, 18, 0.92);
+    background: #071015;
 
     border-bottom-color: rgba(255, 255, 255, 0.08);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 
     box-shadow:
         0 8px 35px rgba(0, 0, 0, 0.22);
@@ -6933,4 +6936,58 @@ img {
         animation: none !important;
         transition: none !important;
     }
+}
+
+/* MOBILNI - UKLANJANJE PROBLEMA SA ZAMUCENJEM */
+
+@media (max-width: 900px) {
+
+    .site-header,
+    .site-header.scrolled,
+    .btn-secondary,
+    .stats,
+    .about-quote,
+    .transform-photo::after,
+    .testimonials-trust,
+    .contact-form-wrapper {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+}
+
+/* ISPRAVKA MOBILNOG ZAGLAVLJA */
+
+@media (max-width: 900px) {
+
+    .site-header,
+    .site-header.scrolled {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+        height: 75px !important;
+        min-height: 75px !important;
+        max-height: 75px !important;
+
+        overflow: visible !important;
+
+        background: #071015 !important;
+
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .header-container {
+        height: 75px !important;
+        min-height: 75px !important;
+    }
+
+@media (max-width: 900px) {
+    .site-header.scrolled {
+        background: rgba(7, 16, 21, 0.88) !important;
+    }
+}
+
 }
