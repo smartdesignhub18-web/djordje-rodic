@@ -6920,3 +6920,17 @@ img {
     }
 }
 
+/* PRIVREMENA PROVERA SCROLL ANIMACIJA */
+
+@media (max-width: 900px) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
