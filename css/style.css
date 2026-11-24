@@ -1,5 +1,5 @@
 /* =========================================================
-   Personalni Trener - PERSONALNI TRENER
+   Đorđe Rodić - Đorđe Rodić
    GLAVNI CSS
 ========================================================= */
 
@@ -7094,3 +7094,207 @@ img {
     -webkit-backdrop-filter: none !important;
 }
 
+
+/* NOVI LOGO U FOOTERU */
+
+.footer-logo-image {
+    display: block;
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+footer .logo-text {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+footer .logo-text small {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .footer-logo-image {
+        width: 110px;
+    }
+}
+
+/* CENTRIRANJE NATPISA ISPOD FOOTER LOGOA */
+
+footer .logo-text {
+    display: block;
+    width: 130px;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.3;
+}
+
+footer .logo-text small {
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+    footer .logo-text {
+        width: 110px;
+    }
+}
+
+/* RAZMAK IZMEDJU LOGOA I IMENA */
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px !important;
+}
+
+.site-header .logo-text {
+    margin: 0 !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.site-header .logo-text small {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* PRIBLIZAVANJE IMENA LOGOTIPU */
+
+.site-header .logo {
+    width: fit-content !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+}
+
+.site-header .logo-text {
+    width: auto !important;
+    margin-left: -20px !important;
+    margin-right: 0 !important;
+    flex: 0 0 auto !important;
+}
+
+/* =========================================================
+   MODERNI MOBILNI FOOTER
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-footer {
+        padding: 50px 0 25px;
+        text-align: center;
+    }
+
+    .footer-main {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 35px 20px !important;
+        padding-bottom: 30px;
+    }
+
+    /* LOGO I IME */
+
+    .footer-brand {
+        grid-column: 1 / -1 !important;
+        text-align: center !important;
+    }
+
+    .footer-logo-image {
+        display: block;
+        width: 180px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+    .footer-brand .logo-text {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 12px auto 0 !important;
+        font-size: 16px;
+    }
+
+    .footer-brand .logo-text small {
+        display: block;
+        margin-top: 4px;
+        font-size: 13px;
+    }
+
+    .footer-brand p {
+        max-width: 340px;
+        margin: 20px auto 0 !important;
+        text-align: center !important;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    /* NAVIGACIJA I INFORMACIJE */
+
+    .footer-column {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start;
+        text-align: center !important;
+        gap: 12px;
+    }
+
+    .footer-column > strong {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .footer-column a {
+        width: auto !important;
+        text-align: center !important;
+        font-size: 13px;
+    }
+
+    /* DRUSTVENE MREZE */
+
+    .footer-column:last-child {
+        grid-column: 1 / -1 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+
+        gap: 15px 20px !important;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 25px;
+    }
+
+    .footer-column:last-child > strong {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .footer-column:last-child a {
+        color: var(--turquoise);
+    }
+
+    /* COPYRIGHT */
+
+    .footer-bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+        gap: 12px !important;
+
+        font-size: 11px;
+        padding-top: 25px;
+    }
+}
