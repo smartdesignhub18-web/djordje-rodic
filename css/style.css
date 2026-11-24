@@ -7298,3 +7298,64 @@ footer .logo-text small {
         padding-top: 25px;
     }
 }
+
+/* FOOTER LOGO - DESKTOP */
+
+@media (min-width: 901px) {
+
+    .site-footer .footer-logo-image {
+        display: block !important;
+        width: 130px !important;
+        max-width: 130px !important;
+        height: auto !important;
+        margin: 0 !important;
+    }
+
+    .site-footer .footer-brand .logo-text {
+        display: block !important;
+        width: 130px !important;
+        text-align: center !important;
+        margin: 8px 0 0 !important;
+    }
+
+    .site-footer .logo-text small {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   POZADINA OTVORENOG MOBILNOG MENIJA
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header.menu-open,
+    .site-header.scrolled.menu-open {
+
+        height: 100vh !important;
+        height: 100dvh !important;
+
+        min-height: 100dvh !important;
+        max-height: 100dvh !important;
+
+        background: rgba(7, 16, 21, 0.99) !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .site-header.menu-open .mobile-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    .site-header:not(.menu-open) .mobile-menu {
+        display: none !important;
+    }
+
+}
